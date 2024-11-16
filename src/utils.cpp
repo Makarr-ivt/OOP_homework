@@ -28,7 +28,7 @@ void measure_metric(int &metric, int min_limit, int max_limit) {
     // Если change_factor in {8, 9, 10}, показатель не меняется
 }
 
-bool ask_yes_or_no(std::string question) {
+bool is_answer_yes(std::string question) {
     std::cout << question << "[y/n]: ";
     //get user input
     char input;
