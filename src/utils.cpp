@@ -1,12 +1,13 @@
 #include <random>
 #include <iostream>
+using namespace std;
 
 // Функция для генерации случайных целых чисел
 int measure(int min, int max)
 {
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 gen(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(min, max); // define the range
+    random_device rd; // obtain a random number from hardware
+    mt19937 gen(rd()); // seed the generator
+    uniform_int_distribution<> distr(min, max); // define the range
     return distr(gen);
 }
 // https://stackoverflow.com/questions/7560114/random-number-c-in-some-range
@@ -28,22 +29,21 @@ void measure_metric(int &metric, int min_limit, int max_limit) {
     // Если change_factor in {8, 9, 10}, показатель не меняется
 }
 
-bool is_answer_yes(std::string question) {
-    std::cout << question << "[y/n]: ";
+bool is_answer_yes(string question) {
+    cout << question << " [y/n]:";
     //get user input
-    char input;
-    std::cin >> input;
-    //convert the input to lowercase 
-    char answer = tolower(input);
+    string input;
     //check the input (not valid input will clear the user input)
-    while (!(std::cin >> input) || ((answer != 'y') && (answer != 'n'))) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid input. Please, try again!\n";
-        std::cout << question << "[y/n]: ";
+    if (!(cin >> input)
+        || ((tolower(input[0]) != 'y') && (tolower(input[0]) != 'n'))
+        || (input.length() > 1)) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input. Please, try again!\n";
+        return is_answer_yes(question);
     }
     //evalute input cases
-    switch (answer) {
+    switch (tolower(input[0])) {
     case 'y':
         return true;
     case 'n':
@@ -54,11 +54,11 @@ bool is_answer_yes(std::string question) {
 
 int ask_int_value(int min_v, int max_v) {
     int number;
-    std::cout << "Enter an integer between "<<min_v<<" and "<<max_v<<": ";
-    if (!(std::cin >> number) || number < min_v || number > max_v) {
-        std::cout << "Invalid input.\n";
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cout << "Enter an integer between "<<min_v<<" and "<<max_v<<": ";
+    if (!(cin >> number) || number < min_v || number > max_v) {
+        cout << "Invalid input.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         return ask_int_value(min_v, max_v);
     }
     return number;
