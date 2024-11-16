@@ -5,6 +5,9 @@
 #include "Meteostation.h"
 
 #define DEFAULT_KINGDOM_SIZE 10
+#define MIN_KINGDOM_SIZE 4
+#define MAX_KINGDOM_SIZE 20
+
 #define DEFAULT_NUM_OF_VANES 3
 
 // метеоцентр
@@ -48,8 +51,6 @@ private:
     void clear_csv();
     void launch_python_script();
     
-
-
     unsigned int kingdom_size;
     unsigned int num_of_vanes;
     std::vector<std::reference_wrapper<Weathervane>> stations;
