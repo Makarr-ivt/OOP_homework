@@ -25,12 +25,13 @@ public:
     AppManager(AppManager&&) = delete;                  // Запрет конструктора перемещения
     AppManager& operator=(AppManager&&) = delete;       // Запрет перемещающего присваивания
 
-    unsigned int get_kingdom_size() const {
-        return kingdom_size;
-    }
-    unsigned int get_num_of_vanes() const {
-        return num_of_vanes;
-    }
+    void set_user_kingdom_size();
+    void set_user_num_of_vanes();
+    void setup_meteosystem();
+    void take_measures(); // обновляет значения всех метеостанций/флюгеров
+    void save_data_to_csv();
+    void clear_csv();
+    void launch_python_script();
 
 private:
     AppManager():
@@ -43,13 +44,6 @@ private:
     //     clearCSV();
     // }
     
-    void set_user_kingdom_size();
-    void set_user_num_of_vanes();
-    void setup_meteosystem();
-    void take_measures(); // обновляет значения всех метеостанций/флюгеров
-    void save_data_to_csv();
-    void clear_csv();
-    void launch_python_script();
     
     unsigned int kingdom_size;
     unsigned int num_of_vanes;
