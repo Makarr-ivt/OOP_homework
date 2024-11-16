@@ -49,4 +49,17 @@ bool is_answer_yes(std::string question) {
     case 'n':
         return false;
     }
+} // https://stackoverflow.com/a/73790241
+
+
+int ask_int_value(int min_v, int max_v) {
+    int number;
+    std::cout << "Enter an integer between "<<min_v<<" and "<<max_v<<": ";
+    if (!(std::cin >> number) || number < min_v || number > max_v) {
+        std::cout << "Invalid input.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return ask_int_value(min_v, max_v);
+    }
+    return number;
 }
