@@ -1,4 +1,5 @@
 #include <random>
+#include <iostream>
 
 // Функция для генерации случайных целых чисел
 int measure(int min, int max)
@@ -25,4 +26,27 @@ void measure_metric(int &metric, int min_limit, int max_limit) {
         metric = measure(1, 10);
     };
     // Если change_factor in {8, 9, 10}, показатель не меняется
+}
+
+bool ask_yes_or_no(std::string question) {
+    std::cout << question << "[y/n]: ";
+    //get user input
+    char input;
+    std::cin >> input;
+    //convert the input to lowercase 
+    char answer = tolower(input);
+    //check the input (not valid input will clear the user input)
+    while (!(std::cin >> input) || ((answer != 'y') && (answer != 'n'))) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input. Please, try again!\n";
+        std::cout << question << "[y/n]: ";
+    }
+    //evalute input cases
+    switch (answer) {
+    case 'y':
+        return true;
+    case 'n':
+        return false;
+    }
 }
