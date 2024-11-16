@@ -43,12 +43,10 @@ bool is_answer_yes(string question) {
         return is_answer_yes(question);
     }
     //evalute input cases
-    switch (tolower(input[0])) {
-    case 'y':
+    if (tolower(input[0]) == 'y') {
         return true;
-    case 'n':
-        return false;
     }
+    return false;
 } // https://stackoverflow.com/a/73790241
 
 
