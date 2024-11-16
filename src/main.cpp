@@ -9,6 +9,10 @@ static AppManager& Meteocenter = AppManager::getInstance();
 int main()
 {
     cout << Meteocenter.get_kingdom_size() << endl;
+    Meteocenter.set_user_kingdom_size();
+    cout << Meteocenter.get_kingdom_size() << endl;
+    cout << Meteocenter.get_num_of_vanes() << endl;
+    Meteocenter.set_user_num_of_vanes();
     cout << Meteocenter.get_num_of_vanes() << endl;
 
     // test_weathervane();
