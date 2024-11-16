@@ -33,6 +33,15 @@ public:
     void save_data_to_csv();
     void clear_csv();
     void launch_python_script();
+    
+    int get_kingdom_size() const {
+        return kingdom_size;
+    }
+
+    int get_num_of_vanes() const {
+        return num_of_vanes;
+    }
+
 
 private:
     AppManager():
