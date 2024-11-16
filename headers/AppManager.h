@@ -7,8 +7,9 @@
 #define DEFAULT_KINGDOM_SIZE 10
 #define MIN_KINGDOM_SIZE 4
 #define MAX_KINGDOM_SIZE 20
-
 #define DEFAULT_NUM_OF_VANES 3
+
+using namespace std;
 
 // метеоцентр
 class AppManager final {
@@ -38,7 +39,7 @@ private:
         kingdom_size(DEFAULT_KINGDOM_SIZE),
         num_of_vanes(DEFAULT_NUM_OF_VANES)
     {
-        stations = std::vector<std::reference_wrapper<Weathervane>>();
+        stations = vector<reference_wrapper<Weathervane>>();
     }
     // ~AppManager() {
     //     clearCSV();
@@ -47,7 +48,7 @@ private:
     
     unsigned int kingdom_size;
     unsigned int num_of_vanes;
-    std::vector<std::reference_wrapper<Weathervane>> stations;
+    vector<reference_wrapper<Weathervane>> stations;
 };
 
 #endif
