@@ -2,6 +2,7 @@
 #define _APPMANAGER_
 
 #include <vector>
+#include <memory>
 #include "Meteostation.h"
 
 #define DEFAULT_KINGDOM_SIZE 10
@@ -29,7 +30,7 @@ public:
     void set_user_kingdom_size();
     void set_user_num_of_vanes();
     void setup_meteosystem();
-    void take_measures(); // обновляет значения всех метеостанций/флюгеров
+    void take_measures();
     void save_data_to_csv();
     void clear_csv();
     void launch_python_script();
@@ -42,13 +43,12 @@ public:
         return num_of_vanes;
     }
 
-
 private:
     AppManager():
         kingdom_size(DEFAULT_KINGDOM_SIZE),
         num_of_vanes(DEFAULT_NUM_OF_VANES)
     {
-        stations = vector<reference_wrapper<Weathervane>>();
+        stations = vector<unique_ptr<Weathervane>>();
     }
     // ~AppManager() {
     //     clearCSV();
@@ -57,7 +57,7 @@ private:
     
     unsigned int kingdom_size;
     unsigned int num_of_vanes;
-    vector<reference_wrapper<Weathervane>> stations;
+    vector<unique_ptr<Weathervane>> stations;
 };
 
 #endif
