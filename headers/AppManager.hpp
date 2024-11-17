@@ -29,7 +29,7 @@ public:
     void setup_meteosystem();
     void show_stations_list() const;
     void make_measurements();
-    void save_to_json(const string& filename = "D:/oop_3_work/data_json/data.json");
+    void save_to_json(const string& filename = DEFAULT_JSON_FOLDER);
     void launch_python_script();
     
     int get_kingdom_size() const {
@@ -47,7 +47,7 @@ private:
     {
         stations = vector<unique_ptr<Weathervane>>();
     }
-    
+
     void update_stations(int times);
     
     unsigned int kingdom_size;

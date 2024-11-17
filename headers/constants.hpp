@@ -18,4 +18,6 @@
 #define MIN_MEASUREMENTS 2
 #define MAX_MEASUREMENTS 20
 
+#define DEFAULT_JSON_FOLDER "D:/oop_3_work/data_json/data.json"
+
 #endif
