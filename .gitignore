@@ -1,2 +1,3 @@
 build/
 .vscode
+python_scripts/venv
