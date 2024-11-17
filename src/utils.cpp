@@ -3,8 +3,7 @@
 using namespace std;
 
 // Функция для генерации случайных целых чисел
-int measure(int min, int max)
-{
+int measure(int min, int max) {
     random_device rd; // obtain a random number from hardware
     mt19937 gen(rd()); // seed the generator
     uniform_int_distribution<> distr(min, max); // define the range
@@ -60,4 +59,24 @@ int ask_int_value(int min_v, int max_v) {
         return ask_int_value(min_v, max_v);
     }
     return number;
+}
+
+pair<int, int> ask_int_pair(int min_v, int max_v) {
+    int first, second;
+    cout << "Enter two integers between " << min_v << " and " << max_v << " separated by space: ";
+    
+    if (!(cin >> first >> second)
+        || first < min_v || first > max_v
+        || second < min_v || second > max_v) {
+        cout << "Invalid input.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        return ask_int_pair(min_v, max_v);
+    }
+
+    return make_pair(first, second);
+}
+
+pair<int, int> generate_int_pair(int min_v, int max_v) {
+    return make_pair(measure(min_v, max_v), measure(min_v, max_v));
 }
