@@ -14,6 +14,8 @@ int main()
     cout << Meteocenter.get_num_of_vanes() << endl;
     Meteocenter.set_user_num_of_vanes();
     cout << Meteocenter.get_num_of_vanes() << endl;
+    Meteocenter.setup_meteosystem();
+    Meteocenter.show_stations_list();
 
     // test_weathervane();
     // test_meteostation();
