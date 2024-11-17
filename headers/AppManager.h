@@ -30,6 +30,7 @@ public:
     void set_user_kingdom_size();
     void set_user_num_of_vanes();
     void setup_meteosystem();
+    void show_stations_list() const;
     void take_measures();
     void save_data_to_csv();
     void clear_csv();
