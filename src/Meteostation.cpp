@@ -1,7 +1,7 @@
 #include "Meteostation.h"
 #include <iostream>
 
-void Meteostation::measure_all_metrics(void) {
+void Meteostation::measure_all_metrics() {
     Weathervane::measure_all_metrics();
     measure_temperature();
     measure_pressure();

@@ -30,11 +30,11 @@ public:
         data = vector<array<int, 4>>();
     } // конструктор копирования
 
-    Class_type get_type(void) const override {
+    Class_type get_type() const override {
         return Class_type::Meteostation;
     } // метод идентификации
     
-    int get_data_size(void) const {
+    int get_data_size() const {
         return data.size();
     } // геттер для получения размера вектора с сохранёнными измерениями
     
@@ -49,18 +49,18 @@ public:
     Возвращает true, если значения переданы, иначе false
     */
     
-    void measure_all_metrics(void) override; // измерение характеристик
+    void measure_all_metrics() override; // измерение характеристик
 
 private:
     int temperature {-1};
     int pressure {-1};
     vector<array<int, 4>> data; // Вектор хранит несколько сделанных измерений метеостанции
     
-    void measure_temperature(void) {
+    void measure_temperature() {
        measure_metric(temperature, MIN_TEMPERATURE, MAX_TEMPERATURE);
     };
     
-    void measure_pressure(void) {
+    void measure_pressure() {
         measure_metric(pressure, MIN_PRESSURE, MAX_PRESSURE);
     };
 

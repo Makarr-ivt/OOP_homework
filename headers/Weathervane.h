@@ -46,11 +46,11 @@ protected:
     int y_coord;
     
     
-    void measure_wind_speed(void) {
+    void measure_wind_speed() {
         measure_metric(wind_speed, 0, MAX_WIND_SPEED);
     }
     
-    void measure_wind_direction(void) {
+    void measure_wind_direction() {
         measure_metric(wind_direction, 0, MAX_WIND_DIRECTION);
     }
 };
