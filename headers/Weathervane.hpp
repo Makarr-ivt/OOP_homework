@@ -1,9 +1,9 @@
 #ifndef _WEATHERVANE_
 #define _WEATHERVANE_
 
-#include "class_type.h"
-#include "utils.h"
-#include "constants.h"
+#include "class_type.hpp"
+#include "utils.hpp"
+#include "constants.hpp"
 
 
 

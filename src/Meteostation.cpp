@@ -1,4 +1,4 @@
-#include "Meteostation.h"
+#include "Meteostation.hpp"
 #include <iostream>
 
 void Meteostation::measure_all_metrics() {

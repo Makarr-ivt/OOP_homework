@@ -1,7 +1,7 @@
 #ifndef _TESTS_
 #define _TESTS_
 #include <cassert>
-#include "Meteostation.h"
+#include "Meteostation.hpp"
 
 // Weathevane tests
 void test_weathervane_default_constructor();

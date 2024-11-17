@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <memory>
-#include "Meteostation.h"
-#include "constants.h"
+#include "Meteostation.hpp"
+#include "constants.hpp"
 
 using namespace std;
 

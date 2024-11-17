@@ -1,11 +1,11 @@
 #ifndef _METEOSTATION_
 #define _METEOSTATION_
 
-#include "Weathervane.h"
+#include "Weathervane.hpp"
 #include <vector>
 #include <array>
-#include "utils.h"
-#include "constants.h"
+#include "utils.hpp"
+#include "constants.hpp"
 using namespace std;
 
 // Дочерний класс, наследник от Weathervane

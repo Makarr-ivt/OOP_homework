@@ -1,4 +1,4 @@
-#include "test_modules.h"
+#include "test_modules.hpp"
 
 void test_get_type() {
     Meteostation m;

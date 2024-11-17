@@ -1,4 +1,4 @@
-#include "Weathervane.h"
+#include "Weathervane.hpp"
 
 bool Weathervane::get_results(int &wind_speed, int &wind_direction) const {
     if (this->wind_speed == -1 || this->wind_direction == -1) {
