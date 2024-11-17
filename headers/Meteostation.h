@@ -6,7 +6,7 @@
 #include <array>
 #include "utils.h"
 #include "constants.h"
-
+using namespace std;
 
 // Дочерний класс, наследник от Weathervane
 class Meteostation : public Weathervane {
@@ -17,7 +17,7 @@ public:
         wind_direction = -1;
         temperature = -1;
         pressure = -1;
-        data = std::vector<std::array<int, 4>>();
+        data = vector<array<int, 4>>();
     } // конструктор инициализации
     
     Meteostation() : Meteostation(0, 0) {} // конструктор по умолчанию
@@ -27,7 +27,7 @@ public:
         wind_direction = -1;
         temperature = -1;
         pressure = -1;
-        data = std::vector<std::array<int, 4>>();
+        data = vector<array<int, 4>>();
     } // конструктор копирования
 
     Class_type get_type(void) const override {
@@ -54,7 +54,7 @@ public:
 private:
     int temperature {-1};
     int pressure {-1};
-    std::vector<std::array<int, 4>> data; // Вектор хранит несколько сделанных измерений метеостанции
+    vector<array<int, 4>> data; // Вектор хранит несколько сделанных измерений метеостанции
     
     void measure_temperature(void) {
        measure_metric(temperature, MIN_TEMPERATURE, MAX_TEMPERATURE);
