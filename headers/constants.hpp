@@ -20,4 +20,6 @@
 
 #define DEFAULT_JSON_FOLDER "D:/oop_3_work/data_json/data.json"
 
+#define COMMAND_CALL_PYTHON_SCRIPT "python D:/oop_3_work/python_scripts/render_data.py"
+
 #endif

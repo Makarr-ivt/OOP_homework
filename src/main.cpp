@@ -23,6 +23,7 @@ int main()
     //Meteocenter.show_stations_list();
     Meteocenter.make_measurements();
     Meteocenter.save_to_json();
+    Meteocenter.launch_python_script();
 
     return 0;
 }

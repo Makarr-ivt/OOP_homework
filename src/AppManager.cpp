@@ -108,3 +108,7 @@ void AppManager::save_to_json(const string& filename) {
     ofstream file(filename);
     file << j.dump(4); // С отступом в 4 пробела для читабельности
 }
+
+void AppManager::launch_python_script() {
+    system(COMMAND_CALL_PYTHON_SCRIPT);
+}
