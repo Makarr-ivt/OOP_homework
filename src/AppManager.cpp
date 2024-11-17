@@ -20,6 +20,7 @@ void AppManager::set_user_kingdom_size() {
     AppManager::set_user_kingdom_size();
 }
 
+
 void AppManager::set_user_num_of_vanes() {    
     string question = "Current num of vanes is "
                     + to_string(AppManager::num_of_vanes)
@@ -31,6 +32,7 @@ void AppManager::set_user_num_of_vanes() {
     AppManager::num_of_vanes = ask_int_value(0, AppManager::kingdom_size);
     AppManager::set_user_num_of_vanes();
 }
+
 
 void AppManager::setup_meteosystem() {
     string question = "Current num of vanes is "
@@ -63,6 +65,7 @@ void AppManager::setup_meteosystem() {
     }   
 }
 
+
 void AppManager::show_stations_list() const {
     for (auto& station_ptr : AppManager::stations) {
         auto station = station_ptr.get();
@@ -78,5 +81,20 @@ void AppManager::show_stations_list() const {
                 break;
         }
         cout <<"("<< x << ", "<< y << ") station is " << type << endl;
+    }
+}
+
+void AppManager::make_measurements() {
+    cout << "Now let's take some measurements! How many do you want to make?\n";
+    int times = ask_int_value(MIN_MEASUREMENTS, MAX_MEASUREMENTS);
+    AppManager::update_stations(times);
+}
+
+void AppManager::update_stations(int times) {
+    for (auto n = 0; n < times; ++n) {
+        for (auto& station_ptr : AppManager::stations) {
+            auto station = station_ptr.get();
+            station->measure_all_metrics();
+        }
     }
 }

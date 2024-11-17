@@ -11,7 +11,7 @@ using namespace std;
 // метеоцентр
 class AppManager final {
 public:
-// Получение единственного экземпляра класса
+    // Получение единственного экземпляра класса
     static AppManager& getInstance() {
         static AppManager instance; // Создается единожды и живет до конца программы
         return instance;
@@ -27,7 +27,7 @@ public:
     void set_user_num_of_vanes();
     void setup_meteosystem();
     void show_stations_list() const;
-    void take_measures();
+    void make_measurements();
     void save_data_to_csv();
     void clear_csv();
     void launch_python_script();
@@ -50,7 +50,7 @@ private:
     // ~AppManager() {
     //     clearCSV();
     // }
-    
+    void update_stations(int times);
     
     unsigned int kingdom_size;
     unsigned int num_of_vanes;
