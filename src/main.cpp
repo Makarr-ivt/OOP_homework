@@ -20,7 +20,9 @@ int main()
     Meteocenter.set_user_num_of_vanes();
     cout << Meteocenter.get_num_of_vanes() << endl;
     Meteocenter.setup_meteosystem();
-    Meteocenter.show_stations_list();
+    //Meteocenter.show_stations_list();
+    Meteocenter.make_measurements();
+    Meteocenter.save_to_json();
 
     return 0;
 }
