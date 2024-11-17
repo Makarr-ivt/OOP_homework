@@ -15,5 +15,7 @@
 #define MIN_PRESSURE 700
 #define MAX_PRESSURE 800
 
+#define MIN_MEASUREMENTS 2
+#define MAX_MEASUREMENTS 20
 
 #endif
