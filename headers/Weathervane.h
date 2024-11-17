@@ -3,11 +3,7 @@
 
 #include "class_type.h"
 #include "utils.h"
-
-
-#define MAX_WIND_SPEED 100
-#define MAX_WIND_DIRECTION 360
-// min limits are equal to 0
+#include "constants.h"
 
 
 

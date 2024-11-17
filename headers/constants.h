@@ -1,0 +1,19 @@
+#ifndef __CONSTANTS__
+#define __CONSTANTS__
+
+#define DEFAULT_KINGDOM_SIZE 10
+#define MIN_KINGDOM_SIZE 4
+#define MAX_KINGDOM_SIZE 20
+#define DEFAULT_NUM_OF_VANES 3
+
+#define MAX_WIND_SPEED 100
+#define MAX_WIND_DIRECTION 360
+// min limits are equal to 0
+
+#define MIN_TEMPERATURE 250
+#define MAX_TEMPERATURE 310
+#define MIN_PRESSURE 700
+#define MAX_PRESSURE 800
+
+
+#endif

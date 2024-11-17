@@ -5,11 +5,7 @@
 #include <vector>
 #include <array>
 #include "utils.h"
-
-#define MIN_TEMPERATURE 250
-#define MAX_TEMPERATURE 310
-#define MIN_PRESSURE 700
-#define MAX_PRESSURE 800
+#include "constants.h"
 
 
 // Дочерний класс, наследник от Weathervane
