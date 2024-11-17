@@ -32,3 +32,10 @@ bool Meteostation::get_results(int &wind_speed,
     pressure = data[data_index][3];
     return true;
 };
+
+json Meteostation::to_json() const {
+        return json{{"type", "Meteostation"},
+                    {"x", x_coord},
+                    {"y", y_coord},
+                    {"data", data}};
+}

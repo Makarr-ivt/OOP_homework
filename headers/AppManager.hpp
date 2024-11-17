@@ -5,7 +5,8 @@
 #include <memory>
 #include "Meteostation.hpp"
 #include "constants.hpp"
-
+#include "json.hpp"
+using json = nlohmann::json;
 using namespace std;
 
 // метеоцентр
@@ -28,8 +29,8 @@ public:
     void setup_meteosystem();
     void show_stations_list() const;
     void make_measurements();
-    void save_data_to_csv();
-    void clear_csv();
+    void save_to_json(const string& filename);
+    void delete_json();
     void launch_python_script();
     
     int get_kingdom_size() const {
@@ -48,7 +49,7 @@ private:
         stations = vector<unique_ptr<Weathervane>>();
     }
     // ~AppManager() {
-    //     clearCSV();
+    //     delete_json();
     // }
     void update_stations(int times);
     

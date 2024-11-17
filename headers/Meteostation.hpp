@@ -6,6 +6,8 @@
 #include <array>
 #include "utils.hpp"
 #include "constants.hpp"
+#include "json.hpp"
+using json = nlohmann::json;
 using namespace std;
 
 // Дочерний класс, наследник от Weathervane
@@ -50,7 +52,7 @@ public:
     */
     
     void measure_all_metrics() override; // измерение характеристик
-
+    json to_json() const override;
 private:
     int temperature {-1};
     int pressure {-1};

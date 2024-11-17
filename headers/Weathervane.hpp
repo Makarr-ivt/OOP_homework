@@ -4,6 +4,8 @@
 #include "class_type.hpp"
 #include "utils.hpp"
 #include "constants.hpp"
+#include "json.hpp"
+using json = nlohmann::json;
 
 
 
@@ -39,6 +41,8 @@ public:
         measure_wind_speed();
     } // измерение характеристик
     
+    virtual json to_json() const;
+
 protected:
     int wind_direction {-1};
     int wind_speed {-1};

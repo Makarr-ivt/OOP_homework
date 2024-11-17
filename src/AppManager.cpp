@@ -1,6 +1,7 @@
 #include "AppManager.hpp"
 #include "utils.hpp"
 #include <iostream>
+#include <fstream>
 #include <set>
 
 using namespace std;
@@ -97,4 +98,13 @@ void AppManager::update_stations(int times) {
             station->measure_all_metrics();
         }
     }
+}
+
+void AppManager::save_to_json(const string& filename) {
+    json j;
+    for (const auto& station : AppManager::stations) {
+        j.push_back(station->to_json());
+    }
+    ofstream file(filename);
+    file << j.dump(4); // С отступом в 4 пробела для читабельности
 }

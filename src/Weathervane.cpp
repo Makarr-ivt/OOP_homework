@@ -13,3 +13,11 @@ void Weathervane::get_coords(int &x, int &y) const {
     x = x_coord;
     y = y_coord;
 }
+
+json Weathervane::to_json() const {
+        return json{{"type", "Weathervane"},
+                    {"x", x_coord},
+                    {"y", y_coord},
+                    {"wind_direction", wind_direction},
+                    {"wind_speed", wind_speed}};
+}
