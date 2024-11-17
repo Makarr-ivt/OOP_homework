@@ -8,6 +8,11 @@ static AppManager& Meteocenter = AppManager::getInstance();
 
 int main()
 {
+    test_weathervane();
+    test_meteostation();
+    test_get_type();
+    cout << "All assertions from 2 lab have been passed!\n";
+
     cout << Meteocenter.get_kingdom_size() << endl;
     Meteocenter.set_user_kingdom_size();
     cout << Meteocenter.get_kingdom_size() << endl;
@@ -17,9 +22,5 @@ int main()
     Meteocenter.setup_meteosystem();
     Meteocenter.show_stations_list();
 
-    // test_weathervane();
-    // test_meteostation();
-    // test_get_type();
-    // cout << "All assertions have been passed!\n";
     return 0;
 }
