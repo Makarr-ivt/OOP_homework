@@ -15,18 +15,21 @@ int measure(int min, int max) {
 // Функция для измерения абстрактного погодного показателя
 void measure_metric(int &metric, int min_limit, int max_limit) {
     int change_factor = measure(0, 10);
-    if (change_factor < 2 or metric == -1) { // Показатель принимает новое случайное значение
+    if (change_factor < 3 || metric == -1) { // Показатель принимает новое случайное значение
         metric = measure(min_limit, max_limit);
-    } else if (change_factor < 8) { // Показатель изменяется на дельту
-        metric += measure(-10, 10);
-    };
-    if (metric > max_limit) { // Проверка на то, что показатель не вышел за пределы
-        metric = max_limit - measure(1, 10);
+    } else {
+        int delta = measure(-3, 3); // Ограничить дельту изменениями от -3 до 3
+        metric += delta;
+    }
+    
+    // Проверка на то, что показатель не вышел за пределы
+    if (metric > max_limit) {
+        metric = max_limit;
     } else if (metric < min_limit) {
-        metric = measure(1, 10);
-    };
-    // Если change_factor in {8, 9, 10}, показатель не меняется
+        metric = min_limit;
+    }
 }
+
 
 bool is_answer_yes(string question) {
     cout << question << " [y/n]:";
