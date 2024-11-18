@@ -10,7 +10,8 @@ def create_temperature_plot(xi, yi, temperature_interp_all_days, output_dir):
         fig_temp.add_trace(go.Surface(
             visible=False,
             x=xi, y=yi, z=temperature_interp_all_days[day],
-            colorscale='Viridis', showscale=True
+            colorscale='Turbo', showscale=True,
+            hovertemplate="X: %{x}<br>Y: %{y}<br>Temperature (K): %{z}<br>Day: " + day
         ))
 
     fig_temp.data[0].visible = True
@@ -25,6 +26,11 @@ def create_temperature_plot(xi, yi, temperature_interp_all_days, output_dir):
 
     fig_temp.update_layout(
         title="Temperature Surface",
+        scene=dict(
+            xaxis_title='X',
+            yaxis_title='Y',
+            zaxis_title='Temperature (K)'
+        ),
         updatemenus=[dict(type="buttons", buttons=buttons)]
     )
     fig_temp.update_scenes(aspectratio=dict(x=1, y=1, z=0.4))
@@ -39,7 +45,8 @@ def create_pressure_plot(xi, yi, pressure_interp_all_days, output_dir):
         fig_pres.add_trace(go.Surface(
             visible=False,
             x=xi, y=yi, z=pressure_interp_all_days[day],
-            colorscale='Viridis', showscale=True
+            colorscale='BuPu', showscale=True,
+            hovertemplate="X: %{x}<br>Y: %{y}<br>Pressure (mmHg): %{z}<br>Day: " + day
         ))
 
     fig_pres.data[0].visible = True
@@ -54,6 +61,11 @@ def create_pressure_plot(xi, yi, pressure_interp_all_days, output_dir):
 
     fig_pres.update_layout(
         title="Pressure Surface",
+        scene=dict(
+                xaxis_title='X',
+                yaxis_title='Y',
+                zaxis_title='Pressure (mmHg)'
+            ),
         updatemenus=[dict(type="buttons", buttons=buttons)]
     )
     fig_pres.update_scenes(aspectratio=dict(x=1, y=1, z=0.4))
