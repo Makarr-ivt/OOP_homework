@@ -85,9 +85,9 @@ def create_wind_plot(vanes_data, stations_data, output_dir):
         y=stations_data["y"] + vanes_data["y"],
         u=stations_data["wind_u"][today] + vanes_data["wind_u"],
         v=stations_data["wind_v"][today] + vanes_data["wind_v"],
-        scale=0.1,
+        scale=0.1, # size of vectors
         name="Today",
-        scaleratio=1
+        scaleratio=1 # xaxis/yaxis = 1
     )
 
     for trace in quiver_figure_today.data:
@@ -100,7 +100,8 @@ def create_wind_plot(vanes_data, stations_data, output_dir):
 
     buttons = []
     for i, day in enumerate(all_days[:-1]):
-        buttons.append(            dict(
+        buttons.append(
+            dict(
                 label=day,
                 method="update",
                 args=[{"visible": [False] * len(fig_wind.data)}]  # Reset visibility
